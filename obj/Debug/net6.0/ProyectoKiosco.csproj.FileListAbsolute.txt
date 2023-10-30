@@ -1,0 +1,15 @@
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\bin\Debug\net6.0\ProyectoKiosco.exe
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\bin\Debug\net6.0\ProyectoKiosco.deps.json
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\bin\Debug\net6.0\ProyectoKiosco.runtimeconfig.json
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\bin\Debug\net6.0\ProyectoKiosco.dll
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\bin\Debug\net6.0\ProyectoKiosco.pdb
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\ProyectoKiosco.csproj.AssemblyReference.cache
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\ProyectoKiosco.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\ProyectoKiosco.AssemblyInfoInputs.cache
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\ProyectoKiosco.AssemblyInfo.cs
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\ProyectoKiosco.csproj.CoreCompileInputs.cache
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\ProyectoKiosco.dll
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\refint\ProyectoKiosco.dll
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\ProyectoKiosco.pdb
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\ProyectoKiosco.genruntimeconfig.cache
+C:\Users\IVAN GONZALEZ\source\repos\ProyectoKiosco\ProyectoKiosco\obj\Debug\net6.0\ref\ProyectoKiosco.dll
