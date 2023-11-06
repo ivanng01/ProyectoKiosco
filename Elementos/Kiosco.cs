@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,8 +11,11 @@ namespace ProyectoKiosco.Elementos
     {
 
         public List<Productos> _productos = new List<Productos>();
+        public List<string> _productosVendidos = new List<string>();
         private object _lock = new object();
         private bool _Veda = false;
+        private int CajaInicial;
+        private int TotalRecaudado = 0;
         private readonly static Kiosco _instance = new Kiosco();
 
         private Kiosco()
@@ -25,10 +29,14 @@ namespace ProyectoKiosco.Elementos
                 return _instance;
             }
         }
+        public int InicializarCaja(int IniciarCaja)
+        {
+            CajaInicial = IniciarCaja;
+            return CajaInicial;
+        }
 
         public void AñadirProducto(Productos newProd)
         {
-
             lock (_lock)
             {
                 _productos.Add(newProd);
@@ -39,7 +47,7 @@ namespace ProyectoKiosco.Elementos
             
             if (this._Veda)
             {
-                Console.WriteLine("VEDA ELECTORAL - ¡Prohibido vender Productos!");
+                Console.WriteLine("VEDA ELECTORAL - ¡PROHIBIDO VENDER PRODUCTOS!");
                 return;
             }
 
@@ -61,12 +69,31 @@ namespace ProyectoKiosco.Elementos
                 return;
             }
 
-            lock (_lock)
+            double vuelto = 0;
+            if (user._DineroAPagar < (pVenta._Precio*cant))
             {
-                pVenta._Stock -= cant;
+                Console.WriteLine($"Cliente {user._Nombre} no tiene suficiente dinero para comprar {cant} Producto {pVenta._Nombre}");
+                return;
             }
-            Console.WriteLine($"Cliente {user._Nombre} ha comprado {cant} Producto {pVenta._Nombre} ");
+            if (user._DineroAPagar >= (pVenta._Precio * cant))
+            {
+                lock (_lock)
+                {
+                    pVenta._Stock -= cant;
+                }
+                vuelto = user._DineroAPagar - (pVenta._Precio * cant);
+                Console.WriteLine($"Cliente {user._Nombre} Compro {cant} Producto {pVenta._Nombre} | PagaCon: ${user._DineroAPagar} | Total: ${pVenta._Precio * cant} | Vuelto: ${vuelto}");
+                TotalRecaudado = TotalRecaudado + ((int)(pVenta._Precio * cant));
+                _productosVendidos.Add(pVenta._Nombre + "          " + cant);
+                return;
+            }
         }
+        public int totalRecaudado () 
+        {
+            Console.WriteLine();
+            return TotalRecaudado + CajaInicial;
+        }
+
         public void VedaElectoral(bool enVeda)
         {
             _Veda = enVeda;
@@ -74,12 +101,22 @@ namespace ProyectoKiosco.Elementos
 
         public void ListadoProductosEnKiosco()
         {
-
-            Console.WriteLine("Stock Actual de Productos en Kiosco");
-            Console.WriteLine($"Producto          Cantidad");
+            Console.WriteLine("STOCK ACTUAL PRODUCTOS EN KIOSCO");
+            Console.WriteLine($"PRODUCTO      CANTIDAD");
             foreach (var productos in _productos)
             {
-                Console.WriteLine($"{productos._Nombre}        {productos._Stock}");
+                Console.WriteLine($"{productos._Nombre}              {productos._Stock}");
+            }
+        }
+
+        public void ListadoProductosVendidos()
+        {
+            Console.WriteLine("PRODUCTOS VENDIDOS");
+            Console.WriteLine($"PRODUCTO  -  CANTIDAD");
+
+            foreach (var prodVendidos in _productosVendidos)
+            {
+                Console.WriteLine($"{prodVendidos}");
             }
         }
     }
